@@ -1,0 +1,65 @@
+'use strict'
+var positions = [
+  'Отвертка ультразвуковая WHO-D',
+  'Ховерборд Mattel 2016',
+  'Нейтрализатор FLASH black edition',
+  'Меч световой FORCE (синий луч)',
+  'Машина времени DeLorean',
+  'Репликатор домашний STAR-94',
+  'Лингвенсор 000-17',
+  'Целеуказатель электронный WAY-Y'
+]
+var itemsList = positions.length;
+
+console.log('Задача №1');
+console.log('Список наименований:');
+
+for (var i = 0; i < itemsList; i++) {
+	console.log(`${i + 1} ${positions[i]}`);
+}
+
+console.log('--------------------------------');
+console.log('Задача №2');
+var extraPositions = [
+  'Экзоскелет Trooper-111',
+  'Нейроинтерфейс игровой SEGUN',
+  'Семена дерева Эйва'
+]
+
+var completePositions = positions;
+
+for (i = 0; i < extraPositions.length; i++) {
+	completePositions.push(extraPositions[i]);
+}
+
+console.log('Окончательный список наименований:')
+for (var i = 0; i < completePositions.length; i++) {
+	console.log(`${i + 1} ${completePositions[i]}`);
+}
+
+console.log('--------------------------------');
+console.log('Задача №3');
+
+var importantItemIndex = completePositions.indexOf('Машина времени DeLorean'); // получаем в переменную индекс нужного товара
+var importantItem = completePositions.splice(importantItemIndex, 1); // вырезаем из массива нужнй товар и сохраняем его в виде массива с одним элементом в переменную
+completePositions.unshift(importantItem[0]); // вставляем вырезанный товар в массив на первое место  
+
+console.log('Принять в первую очередь:')
+for (var i = 0; i < 3; i++) {
+  console.log(`${i + 1} ${completePositions[i]}`);
+}
+
+console.log('--------------------------------');
+console.log('Задача №4');
+
+var [position1, position2, position3, position4, position5, ...positionsOnStore] = completePositions;
+
+console.log('В магазине:');
+console.log('===========');
+console.log(`${position1}\n${position2}\n${position3}\n${position4}\n${position5}`);
+console.log('-//-//-//-//');
+console.log('Остальные товары:');
+console.log('===========');
+for (var item of positionsOnStore) {
+  console.log(item);
+}
