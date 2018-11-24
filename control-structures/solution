@@ -1,0 +1,85 @@
+'use strict'
+
+console.log('Задача 1');
+
+var productsOnWarehouse = 100;
+var productsInOrder;
+
+productsInOrder = 50;
+if (productsInOrder > productsOnWarehouse) {
+  console.log('На складе нет такого количества товаров.');
+} else if (productsInOrder == productsOnWarehouse) {
+  console.log('Вы забираете весь товар с нашего склада!');
+} else {
+  console.log('Заказ оформлен.');
+}
+
+console.log('--------------------------------------')
+console.log('Задача 2');
+
+// 'Луна'
+// 'Крабовидная туманность'
+// 'Галактика Туманность Андромеды'
+// 'Туманность Ориона'
+// 'Звезда смерти'
+var productDeliveryLocation;
+productDeliveryLocation = '/*Insert delivery location here from the above list.*/';
+
+switch (productDeliveryLocation) {
+  case 'Луна':
+    console.log(`Стоимость доставки для ${productDeliveryLocation} 150 Q.`);
+  break;
+  case 'Крабовидная туманность':
+    console.log(`Стоимость доставки для ${productDeliveryLocation} 250 Q.`);
+  break;
+  case 'Галактика Туманность Андромеды':
+    console.log(`Стоимость доставки для ${productDeliveryLocation} 550 Q.`);
+  break;
+  case 'Туманность Ориона':
+    console.log(`Стоимость доставки для ${productDeliveryLocation} 600 Q.`);
+  break;
+  case 'Звезда смерти':
+    console.log(`Стоимость доставки для ${productDeliveryLocation} 'договорная цена'`);
+  break;
+  default:
+    console.log('В ваш квадрант доставка не осуществляется.');
+}
+
+console.log('--------------------------------------')
+console.log('Задача 3');
+
+var price;
+price = 'сто';
+
+try {
+  if (typeof(price) === 'number') {
+    console.log('Цена товара введена корректно');
+  } else {
+    throw ' не является числом';
+  }
+} catch (err) {
+  console.log(`Вы допустили ошибку: ${price} ${err}`);
+}
+
+console.log('--------------------------------------')
+console.log('Задача 4');
+
+// 'Земля'
+// 'Юпитер'
+var nativePlanet;
+var age;
+
+nativePlanet = 'Юпитер';
+age = 121;
+
+if (nativePlanet === 'Земля' && age < 18) {
+  console.log('Вы не достигли совершеннолетия');
+} else if (nativePlanet === 'Земля' && age >= 18) {
+  console.log('Приятных покупок');
+} else if (nativePlanet === 'Юпитер' && age < 120) {
+  console.log('Сожалеем. Вернитесь на 120-й день рождения!');
+} else if (nativePlanet === 'Юпитер' && age >= 120) {
+  console.log('Чистого неба и удачных покупок!');
+} else {
+  console.log('Спасибо, что пользуетесь услугами нашего магазина!');
+}
